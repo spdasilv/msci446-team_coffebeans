@@ -1,0 +1,12 @@
+<subject> amath
+advanced systems analysis and control
+the main theme is the extension of control theory beyond systems
+introduction to theoretical mechanics
+dimensional analysis newtonian dynamics gravity and the two-body problem introduction
+</subject>
+<subject> led
+regional development principles and practice
+this course will review the principles underlying regional development theory and evaluate
+contemporary perspectives on tourism
+this course will introduce participants to a variety of topics and research methods through
+</subject>
