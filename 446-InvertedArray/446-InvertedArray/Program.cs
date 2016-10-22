@@ -10,26 +10,28 @@ namespace _446_InvertedArray
     {
         static void Main(string[] args)
         {
-            //array to store all the stop words
+            //array to store all the stop wordsas
             string[] stopWords = new string[416];
-            StreamReader sr = new StreamReader("E:/c#/446-InvertedArray/Stop Words.txt");
+            StreamReader sr1 = new StreamReader("stop_words.txt");
             string line;
             int i = 0;
-            while ((line = sr.ReadLine()) != null)
+            while ((line = sr1.ReadLine()) != null)
             {
                 stopWords[i] = line;
                 i = i + 1;
             }
+            sr1.Close();
 
             //array to store and read in descriptions+titles 
             string[][] descrip = new String[12][];
-            StreamReader sr2 = new StreamReader("E:/c#/446-InvertedArray/testsubjdesc.txt");
+            StreamReader sr2 = new StreamReader("testsubjdesc.txt");
             i = 0;
             while ((line = sr2.ReadLine()) != null)
             {
                 descrip[i] = line.Split();
                 i = i + 1;
             }
+            sr2.Close();
 
             //dictionary of dictionary to store the word count
             Dictionary<string, Dictionary<string, int>> dictionary = new Dictionary<string, Dictionary<string, int>>();

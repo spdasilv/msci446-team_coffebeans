@@ -2,3 +2,8 @@ E:\c#\446-InvertedArray\446-InvertedArray\bin\Debug\446-InvertedArray.exe
 E:\c#\446-InvertedArray\446-InvertedArray\bin\Debug\446-InvertedArray.pdb
 E:\c#\446-InvertedArray\446-InvertedArray\obj\x86\Debug\446-InvertedArray.exe
 E:\c#\446-InvertedArray\446-InvertedArray\obj\x86\Debug\446-InvertedArray.pdb
+C:\Users\Stefanno\Documents\MSCI 446 Project\msci446-team_coffebeans\446-InvertedArray\446-InvertedArray\obj\x86\Debug\446-InvertedArray.exe
+C:\Users\Stefanno\Documents\MSCI 446 Project\msci446-team_coffebeans\446-InvertedArray\446-InvertedArray\obj\x86\Debug\446-InvertedArray.pdb
+C:\Users\Stefanno\Documents\MSCI 446 Project\msci446-team_coffebeans\446-InvertedArray\446-InvertedArray\bin\Debug\446-InvertedArray.exe
+C:\Users\Stefanno\Documents\MSCI 446 Project\msci446-team_coffebeans\446-InvertedArray\446-InvertedArray\bin\Debug\446-InvertedArray.pdb
+C:\Users\Stefanno\Documents\MSCI 446 Project\msci446-team_coffebeans\446-InvertedArray\446-InvertedArray\obj\x86\Debug\446-InvertedArray.csprojResolveAssemblyReference.cache
