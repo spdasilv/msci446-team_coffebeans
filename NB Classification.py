@@ -10,7 +10,7 @@ dataset = pd.read_csv('training_set_TfxIdf.csv')
 # prepare datasets to be fed into the naive bayes model
 # predict type given tokens
 CV = dataset.COURSE.reshape((len(dataset.COURSE), 1))
-data = (dataset.ix[:,'ponti':'sparr'].values).reshape((len(dataset.COURSE), 8971))
+data = (dataset.ix[:,range(1, CV.size + 1)].values).reshape((len(dataset.COURSE), CV.size))
 
 MB = MultinomialNB()
 MB.fit(data, CV)
