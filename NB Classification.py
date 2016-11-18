@@ -13,7 +13,7 @@ CV = dataset.COURSE.reshape((len(dataset.COURSE), 1))
 data = (dataset.ix[:,range(1, CV.size + 1)].values).reshape((len(dataset.COURSE), CV.size))
 
 MB = MultinomialNB()
-MB.fit(data, CV)
+MB.fit(data, CV.ravel())
 
 print("Probability of the classes: ", MB.class_log_prior_)
 print("Count of the classes: ", MB.class_count_)
@@ -21,8 +21,22 @@ print("Feature Count of the classes: ", MB.feature_count_)
 predicted = MB.predict(data)
 print("Predictions:\n",np.array([predicted]).T)
 
+# predict the probability/likelihood of the prediction
+prob_of_pred = MB.predict_proba(data)
+print("Probability of each class for the prediction: \n", prob_of_pred)
+
+print("Accuracy of the model: ", MB.score(data, CV))
+
+# Calculating 5 fold cross validation results
+model = MultinomialNB()
+kf = KFold(len(CV), n_folds=10, shuffle=True, random_state=0)
+scores = cross_val_score(model, data, CV.ravel(), cv=kf)
+print("MSE of every fold in 10 fold cross validation: ", abs(scores))
+print("Mean of the 10 fold cross-validation: %0.2f" % abs(scores.mean()))
+
 results = open('results_TfxIdf.txt', 'w')
 for entry in predicted:
     results.write(str(entry) + '\n')
 results.close()
+
 print("DONE")
