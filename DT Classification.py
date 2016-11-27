@@ -5,6 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 from sklearn import preprocessing
 from sklearn.cross_validation import KFold, cross_val_score
+import pydotplus
 
 
 dataset = pd.read_csv('training_set_TfxIdf.csv')
@@ -19,11 +20,10 @@ feature_names.pop(0)
 class_names = list(dataset.COURSE.unique())
 
 DT = DecisionTreeClassifier(criterion="entropy", min_samples_leaf=2)
-DT.fit(data, CV.ravel())
+DT = DT.fit(data, CV.ravel())
 # the model
 with open("predict_subject.dot", 'w') as f:
     f = tree.export_graphviz(DT, out_file=f, feature_names=feature_names, class_names=class_names, filled=True)
-
 # predict the class for each data point
 predicted = DT.predict(data)
 print("Predictions: \n", np.array([predicted]).T)
@@ -39,5 +39,6 @@ print("Accuracy score for the model: \n", DT.score(data, CV))
 model = DecisionTreeClassifier()
 kf = KFold(len(CV), n_folds=10, shuffle=True, random_state=0)
 scores = cross_val_score(model, data, CV, cv=kf)
-print("MSE of every fold in 10 fold cross validation: ", abs(scores))
+print("Accuracy of every fold in 10 fold cross validation: ", abs(scores))
 print("Mean of the 10 fold cross-validation: %0.2f" % abs(scores.mean()))
+print("Deviation:(+/- %0.2f)" % (scores.std() * 2))

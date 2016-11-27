@@ -26,15 +26,17 @@ prob_of_pred = MB.predict_proba(data)
 print("Probability of each class for the prediction: \n", prob_of_pred)
 
 print("Accuracy of the model: ", MB.score(data, CV))
+print("Accuracy of the model: ", MB.score(data, CV))
 
-# Calculating 5 fold cross validation results
+# Calculating 10 fold cross validation results
 model = MultinomialNB()
 kf = KFold(len(CV), n_folds=10, shuffle=True, random_state=0)
 scores = cross_val_score(model, data, CV.ravel(), cv=kf)
-print("MSE of every fold in 10 fold cross validation: ", abs(scores))
+print("Accuracy of every fold in 10 fold cross validation: ", abs(scores))
 print("Mean of the 10 fold cross-validation: %0.2f" % abs(scores.mean()))
+print("Deviation:(+/- %0.2f)" % (scores.std() * 2))
 
-results = open('results_TfxIdf.txt', 'w')
+results = open('results_TfxIdf_NB.txt', 'w')
 for entry in predicted:
     results.write(str(entry) + '\n')
 results.close()

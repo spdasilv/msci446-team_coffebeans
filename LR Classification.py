@@ -29,8 +29,9 @@ print("Accuracy of the model: ", LR.score(data, CV))
 model = LogisticRegression()
 kf = KFold(len(CV), n_folds=10, shuffle=True, random_state=0)
 scores = cross_val_score(model, data, CV.ravel(), cv=kf)
-print("MSE of every fold in 10 fold cross validation: ", abs(scores))
+print("Accuracy of every fold in 10 fold cross validation: ", abs(scores))
 print("Mean of the 10 fold cross-validation: %0.2f" % abs(scores.mean()))
+print("Deviation:(+/- %0.2f)" % (scores.std() * 2))
 
 results = open('results_TfxIdf_LR.txt', 'w')
 for entry in predicted:
